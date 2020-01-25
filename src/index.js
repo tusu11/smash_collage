@@ -1,3 +1,5 @@
+import './index.css';
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 //import PropTypes from 'prop-types'
@@ -8,21 +10,21 @@ import { BrowserRouter, Route } from 'react-router-dom'
 //import Title from './components/Title'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
+// import Card from '@material-ui/core/Card';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardHeader from '@material-ui/core/CardHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import StarIcon from '@material-ui/icons/StarBorder';
+// import Grid from '@material-ui/core/Grid';
+// import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import './index.css';
 import topimg from './assets/EOaRlW7UwAEUCp4-orig.jpg'
 import App from './App'
+//import GlobalStyle from './components/GlobalStyles'
 
 function Copyright() {
   return (
@@ -49,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
   },
   toolbarTitle: {
     flexGrow: 1,
@@ -85,6 +87,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+/*
 const tiers = [
   {
     title: 'Free',
@@ -119,20 +122,21 @@ const tiers = [
     buttonVariant: 'outlined',
   },
 ];
-
+*/
 
 function MainPage (){
 
     const classes = useStyles()
     return(
         <React.Fragment>
+          {//<GlobalStyle />
+          }
             <CssBaseline />
             <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
                 <Typography variant="h6" color="inherit" className={classes.toolbarTitle}>
                     スマブラファイターパスジェネレーター
                 </Typography>
-
                 <Button href="#" color="primary" variant="outlined" className={classes.link}>
                     Login
                 </Button>
@@ -141,17 +145,18 @@ function MainPage (){
             {/* Hero unit */}
             <Container maxWidth="sm" component="main" className={classes.heroContent}>
                 <Typography component="h1" variant="h4" align="center" color="textPrimary" gutterBottom>
-                    スマブラファイターパス{<br/>}ジェネレーター
+                  スマブラファイターパス<br />ジェネレーター
                 </Typography>
                 <Typography variant="h6" align="center" color="textSecondary" component="p">
                     クソコラ画像を作りたかった
                 </Typography>
             </Container>
             {/* End hero unit */}
-            <Container maxWidth="xl" component="main">
-                <App />
-            </Container>
 
+            <Container maxWidth="lg" component="main">
+              <App />
+            </Container>
+            {/*
             <Container maxWidth="md" component="main">
                 <Grid container spacing={5} alignItems="flex-end">
                 {tiers.map(tier => (
@@ -193,6 +198,7 @@ function MainPage (){
                 ))}
                 </Grid>
             </Container>
+            */}
             {/* Footer */}
             <Container maxWidth="md" component="footer" className={classes.footer}>
                 <Box mt={5}>

@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -60,13 +60,14 @@ export default function FullWidthTabs() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="tabs">
       <AppBar position="static" color="default">
         <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          variant="fullwidth"
+          variant="scrollable"
+          scrollButtons="auto"
           aria-label="full width tabs example"
         >
             <Tab label="Item One" {...a11yProps(0)} />
@@ -82,11 +83,10 @@ export default function FullWidthTabs() {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-        Item
+        <TabPanel value={value} index={0} dir={theme.direction} >
+          {props.component}
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-        Item
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
         </TabPanel>
